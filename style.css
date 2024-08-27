@@ -19,67 +19,62 @@ body {
 
 /* Flexbox Container */
 .container {
-    display: flex;                   /* Enable Flexbox layout */
-    justify-content: space-between;  /* Evenly distribute space between the quadrants */
-    align-items: flex-start;         /* Align items to the top */
-    padding: 20px;                   /* Padding around the container */
-    background-color: #ffffff;       /* Optional: Background color of the container */
+    display: flex;                     /* Enable Flexbox layout */
+    justify-content: space-between;    /* Evenly distribute space between the items */
+    align-items: stretch;              /* Stretch items to the container's height */
+    padding: 20px;                     /* Padding around the container */
+    background-color: #ffffff;         /* Background color of the container */
 }
 
 /* Quadrants Styling */
 .left-box, .center-box, .right-box {
-    background-color: white;         /* Background color of the boxes */
-    padding: 15px;                   /* Space inside the boxes */
-    margin: 0;                       /* Remove default margin */
-    border: 1px solid #ccc;          /* Light border around the boxes */
-    overflow: auto;                  /* Handle overflow */
+    background-color: white;           /* Background color of the boxes */
+    padding: 15px;                     /* Space inside the boxes */
+    margin: 0;                         /* Remove default margin */
+    border: 1px solid #ccc;            /* Light border around the boxes */
+    overflow: auto;                    /* Handle overflow */
+    box-sizing: border-box;            /* Include padding and border in the element's total width and height */
 }
 
 /* Adjusted Quadrant Sizes */
 .left-box {
-    width: 20%;  /* Set the width of the left container */
-    height: 500px;  /* Set the height of the right container */
+    flex: 1;                          /* Allow the box to grow and shrink */
+    max-width: 20%;                   /* Set the maximum width of the left container */
 }
 
 .center-box {
-    width: 45%;  /* Set the width of the center container */
-    height: 500px; /* Set the height of the right container */
+    flex: 2;                          /* Allow the box to grow and shrink more */
+    max-width: 45%;                   /* Set the maximum width of the center container */
 }
 
 .right-box {
-    width: 20%;  /* Set the width of the right container */
-    height: 500px;  /* Set the height of the right container */
+    flex: 1;                          /* Allow the box to grow and shrink */
+    max-width: 20%;                   /* Set the maximum width of the right container */
 }
-
 
 /* Custom Font */
 .custom-font {
     font-family: 'Moderustic', sans-serif;
 }
 
-.center {
-    text-align: center;
-    margin-top: 0;
-}
-
 /* Default link styles */
 a {
-    color: black; /* Change to your desired color */
-    text-decoration: none; /* Remove underline */
+    color: black;                     /* Change to your desired color */
+    text-decoration: none;            /* Remove underline */
 }
 
 /* Visited link styles */
 a:visited {
-    color: black; /* Change to your desired color */
+    color: black;                     /* Change to your desired color */
 }
 
 /* Hover link styles */
 a:hover {
-    color: gray; /* Change to your desired color for hover state */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    color: gray;                      /* Change to your desired color for hover state */
+    text-decoration: underline;       /* Optional: Add underline on hover */
 }
 
 /* Active link styles */
 a:active {
-    color: black; /* Change to your desired color for active state */
+    color: black;                     /* Change to your desired color for active state */
 }
