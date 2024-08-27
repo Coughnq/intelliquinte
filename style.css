@@ -1,10 +1,14 @@
 body {
     background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Centering and Styling Headings */
 .center {
     text-align: center;
-    margin-top: 0%;
+    margin-top: 0;
 }
 
 .top {
@@ -13,16 +17,69 @@ body {
     margin-bottom: 0;
 }
 
-.box {
-    width: 40%;   /* Set the width of the box */
-    height: 500px;      /* Set the heigh of the box */
-    background-color: whitesmoke;       /* Background color of the box */
-    padding: 10px;      /* Space inside the box, between content and border */
-    margin: 0 auto;       /* Space outside the box. */
-    border: 0px solid black;
-    overflow: auto;
+/* Flexbox Container */
+.container {
+    display: flex;                   /* Enable Flexbox layout */
+    justify-content: space-between;  /* Evenly distribute space between the quadrants */
+    align-items: flex-start;         /* Align items to the top */
+    padding: 20px;                   /* Padding around the container */
+    background-color: #ffffff;       /* Optional: Background color of the container */
 }
 
+/* Quadrants Styling */
+.left-box, .center-box, .right-box {
+    background-color: white;         /* Background color of the boxes */
+    padding: 15px;                   /* Space inside the boxes */
+    margin: 0;                       /* Remove default margin */
+    border: 1px solid #ccc;          /* Light border around the boxes */
+    overflow: auto;                  /* Handle overflow */
+}
+
+/* Adjusted Quadrant Sizes */
+.left-box {
+    width: 20%;  /* Set the width of the left container */
+    height: 500px;  /* Set the height of the right container */
+}
+
+.center-box {
+    width: 45%;  /* Set the width of the center container */
+    height: 500px; /* Set the height of the right container */
+}
+
+.right-box {
+    width: 20%;  /* Set the width of the right container */
+    height: 500px;  /* Set the height of the right container */
+}
+
+
+/* Custom Font */
 .custom-font {
-    font-family: 'Moderustic' sans-serif;
+    font-family: 'Moderustic', sans-serif;
+}
+
+.center {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Default link styles */
+a {
+    color: black; /* Change to your desired color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Visited link styles */
+a:visited {
+    color: black; /* Change to your desired color */
+}
+
+/* Hover link styles */
+a:hover {
+    color: gray; /* Change to your desired color for hover state */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Active link styles */
+a:active {
+    color: black; /* Change to your desired color for active state */
 }
