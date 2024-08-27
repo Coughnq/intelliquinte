@@ -1,74 +1,71 @@
-/* Basic body styling for consistency */
 body {
-    background-color: whitesmoke;
-    font-family: 'Moderustic', sans-serif;
+    background-color: white;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Header styling to match main page */
-header {
-    text-align: center;
+.container {
+    max-width: 800px;
     padding: 20px;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-}
-
-.top {
-    font-size: 50px;
-    margin: 0;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .center {
     text-align: center;
-    font-size: 24px;
 }
 
-/* Container styling to center content */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Adjust as needed */
-    padding: 20px;
+.top {
+    font-size: 50px;
+    margin-bottom: 0;
 }
 
-/* Error box styling */
-.error-box {
-    text-align: center;
-    padding: 30px;
+.center-box {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Limits the width */
-    margin: 0 auto; /* Centers the box horizontally */
+    padding: 15px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
-/* Text styling */
-.error-box h2 {
-    font-size: 80px;
-    color: #333;
-    margin: 0;
+h1, h2, h3 {
+    font-family: 'Moderustic', Arial, sans-serif;
 }
 
-.error-box p {
-    font-size: 18px;
-    color: #666;
-    margin: 20px 0;
-}
-
-/* Link styling */
-.home-link {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #007bff;
+a {
+    color: black;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
 }
 
-.home-link:hover {
-    background-color: #0056b3;
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
 }
