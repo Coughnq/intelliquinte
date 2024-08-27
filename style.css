@@ -19,37 +19,37 @@ body {
 
 /* Flexbox Container */
 .container {
-    display: flex;                     /* Enable Flexbox layout */
-    justify-content: space-between;    /* Evenly distribute space between the items */
-    align-items: stretch;              /* Stretch items to the container's height */
-    padding: 20px;                     /* Padding around the container */
-    background-color: #ffffff;         /* Background color of the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    background-color: #ffffff;
 }
 
 /* Quadrants Styling */
 .left-box, .center-box, .right-box {
-    background-color: white;           /* Background color of the boxes */
-    padding: 15px;                     /* Space inside the boxes */
-    margin: 0;                         /* Remove default margin */
-    border: 1px solid #ccc;            /* Light border around the boxes */
-    overflow: auto;                    /* Handle overflow */
-    box-sizing: border-box;            /* Include padding and border in the element's total width and height */
+    background-color: white;
+    padding: 15px;
+    margin: 0;
+    border: 1px solid #ccc;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 /* Adjusted Quadrant Sizes */
 .left-box {
-    flex: 1;                          /* Allow the box to grow and shrink */
-    max-width: 20%;                   /* Set the maximum width of the left container */
+    flex: 1;
+    max-width: 20%;
 }
 
 .center-box {
-    flex: 2;                          /* Allow the box to grow and shrink more */
-    max-width: 45%;                   /* Set the maximum width of the center container */
+    flex: 2;
+    max-width: 45%;
 }
 
 .right-box {
-    flex: 1;                          /* Allow the box to grow and shrink */
-    max-width: 20%;                   /* Set the maximum width of the right container */
+    flex: 1;
+    max-width: 20%;
 }
 
 /* Custom Font */
@@ -57,24 +57,21 @@ body {
     font-family: 'Moderustic', sans-serif;
 }
 
-/* Default link styles */
+/* Link styles */
 a {
-    color: black;                     /* Change to your desired color */
-    text-decoration: none;            /* Remove underline */
+    color: black;
+    text-decoration: none;
 }
 
-/* Visited link styles */
 a:visited {
-    color: black;                     /* Change to your desired color */
+    color: black;
 }
 
-/* Hover link styles */
 a:hover {
-    color: gray;                      /* Change to your desired color for hover state */
-    text-decoration: underline;       /* Optional: Add underline on hover */
+    color: gray;
+    text-decoration: underline;
 }
 
-/* Active link styles */
 a:active {
-    color: black;                     /* Change to your desired color for active state */
+    color: black;
 }
