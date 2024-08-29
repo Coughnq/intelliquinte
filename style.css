@@ -19,37 +19,40 @@ body {
 
 /* Flexbox Container */
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 20px;
-    background-color: #ffffff;
+    display: flex;                     /* Enable Flexbox layout */
+    justify-content: space-between;    /* Evenly distribute space between the items */
+    align-items: stretch;              /* Stretch items to the container's height */
+    padding: 20px;                     /* Padding around the container */
+    background-color: #ffffff;        /* Background color of the container */
 }
 
 /* Quadrants Styling */
 .left-box, .center-box, .right-box {
-    background-color: white;
-    padding: 15px;
-    margin: 0;
-    border: 1px solid #ccc;
-    overflow: auto;
-    box-sizing: border-box;
+    background-color: white;           /* Background color of the boxes */
+    padding: 15px;                     /* Space inside the boxes */
+    margin: 0;                         /* Remove default margin */
+    border: 1px solid #ccc;            /* Light border around the boxes */
+    overflow: auto;                    /* Handle overflow */
+    box-sizing: border-box;            /* Include padding and border in the element's total width and height */
 }
 
 /* Adjusted Quadrant Sizes */
 .left-box {
-    flex: 1;
-    max-width: 20%;
+    flex: 1;                          /* Allow the box to grow and shrink */
+    max-width: 20%;                   /* Set the maximum width of the left container */
+    border-radius: 15px;
 }
 
 .center-box {
-    flex: 2;
-    max-width: 45%;
+    flex: 2;                          /* Allow the box to grow and shrink more */
+    max-width: 55%;                   /* Set the maximum width of the center container */
+    border-radius: 15px;
 }
 
 .right-box {
-    flex: 1;
-    max-width: 20%;
+    flex: 1;                          /* Allow the box to grow and shrink */
+    max-width: 20%;                   /* Set the maximum width of the right container */
+    border-radius: 15px;
 }
 
 /* Custom Font */
@@ -57,21 +60,39 @@ body {
     font-family: 'Moderustic', sans-serif;
 }
 
-/* Link styles */
+/* Default link styles */
 a {
-    color: black;
-    text-decoration: none;
+    color: black;                     /* Change to your desired color */
+    text-decoration: none;            /* Remove underline */
 }
 
+/* Visited link styles */
 a:visited {
-    color: black;
+    color: black;                     /* Change to your desired color */
 }
 
+/* Hover link styles */
 a:hover {
-    color: gray;
-    text-decoration: underline;
+    color: gray;                      /* Change to your desired color for hover state */
+    text-decoration: underline;       /* Optional: Add underline on hover */
 }
 
+/* Active link styles */
 a:active {
-    color: black;
+    color: black;                     /* Change to your desired color for active state */
+}
+
+.move-up {
+    position: relative; /* Make the element relative to its normal position */
+    top: -15px;         /* Move the element up by 20 pixels */
+}
+
+.move-up1 {
+    position: relative; /* Make the element relative to its normal position */
+    top: -20px;         /* Move the element up by 20 pixels */
+}
+
+.move-up2 {
+    position: relative; /* Make the element relative to its normal position */
+    top: -30px;         /* Move the element up by 20 pixels */
 }
