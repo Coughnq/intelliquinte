@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Intelliquinte</title>
+    <link rel="stylesheet" href="/Style/404.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="intelliquinte" class="top">Intelliquinte</h1>
+        <h3 id="crafted-by-abner" class="center">Crafted By Abner</h3>
+    </header>
+
+    <div class="container">
+        <div class="left-box">
+            <h2 id="navigation" class="center">Navigation</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/we_are_not_interested">Project W.N.I</a></li>
+                <li><a href="https://substack.com/@isitab">My Newsletter</a></li>
+            </ul>
+        </div>
+
+        <div class="center-box" role="main">
+            <div class="error-code">404</div>
+            <h2 class="error-message">Oops! Page Not Found</h2>
+            <p>The page you're looking for seems to have vanished into the digital abyss.</p>
+            <p>Don't worry, even the brightest minds sometimes take unexpected detours.</p>
+            
+            <div class="suggestion-box">
+                <h3>You might be interested in:</h3>
+                <ul id="suggestions">
+                    <li><a href="../index.html">Homepage</a></li>
+                    <li><a href="/we_are_not_interested">Project W.N.I</a></li>
+                    <li><a href="https://substack.com/@isitab">My Newsletter</a></li>
+                </ul>
+            </div>
+
+            <div class="back-button">
+                <a href="javascript:history.back()">← Go Back</a>
+            </div>
+        </div>
+
+        <div class="right-box">
+            <h2 id="resources" class="center">Resources</h2>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/404 Page/index.html">External Resource 2</a></li>
+                <li><a href="/404 Page/index.html">FAQ</a></li>
+                <li><a href="/404 Page/index.html">Feedback</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="center">
+        <p>&copy; 2024 Intelliquinte. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Animation for 404 number
+        gsap.from(".error-code", {duration: 1, y: -50, opacity: 0, ease: "bounce"});
+    </script>
+</body>
+</html>
