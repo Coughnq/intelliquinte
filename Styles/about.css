@@ -1,0 +1,129 @@
+/* Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+/* Section layout */
+.about-section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-intro {
+    text-align: center;
+    font-size: 22px;
+    color: #4a4a4a;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+}
+
+.left-column, .about-values {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-box, .vision-box, .founder-box, .about-values {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+.mission-box h2, .vision-box h2, .founder-box h2, .about-values h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mission-box h2 i, .vision-box h2 i, .founder-box h2 i, .about-values h2 i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.about-values ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: 100%;
+}
+
+.about-values li {
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-values li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.about-values li strong {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.about-values li p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .about-intro {
+        font-size: 20px;
+    }
+
+    .mission-box h2, .vision-box h2, .founder-box h2, .about-values h2 {
+        font-size: 24px;
+    }
+
+    .about-values ul {
+        grid-template-columns: 1fr;
+    }
+}

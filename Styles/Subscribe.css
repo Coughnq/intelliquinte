@@ -1,0 +1,134 @@
+/* Add this at the end of your existing CSS */
+
+:root {
+    --subscribe-width: 100%;
+    --subscribe-height: 300px;
+    --subscribe-bg-color: #ffffff;
+    --subscribe-text-color: #333333;
+    --subscribe-button-color: #333333;
+    --subscribe-button-text-color: #ffffff;
+}
+
+#1E3A8A
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.subscribe-section {
+    background-color: var(--subscribe-bg-color);
+    color: var(--subscribe-text-color);
+    width: var(--subscribe-width);
+    min-height: var(--subscribe-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.subscribe-section .container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.subscribe-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.subscribe-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.subscribe-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+}
+
+.subscribe-button:hover {
+    background-color: #cecece;
+}
+
+.subscribe-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #333333;
+    border-radius: 50px;
+    width: 60%;
+    max-width: 400px;
+    margin-right: 10px;
+}
+
+.subscribe-form button {
+    background-color: var(--subscribe-button-color);
+    color: var(--subscribe-button-text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #cecece;
+}
+
+@media (max-width: 768px) {
+    .subscribe-section {
+        padding: 30px 0;
+    }
+
+    .subscribe-section h2 {
+        font-size: 30px;
+    }
+
+    .subscribe-section p {
+        font-size: 18px;
+    }
+
+    .subscribe-button {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+
+    .subscribe-form input[type="email"],
+    .subscribe-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .subscribe-form input[type="email"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-form button {
+        width: 100%;
+    }
+}
