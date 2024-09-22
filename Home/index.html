@@ -3,17 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Home Page of Intelliquinte. A teenager who is passionate about technology and innovation.">
+    <meta name="keywords" content="Newsletter, Teenager, Intelliquinte, AI, Web Development, Problem-Solving, Team Leadership">
+    <meta name="author" content="Abner Sanabria-Cruz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://intelliquinte.com/Home/">
+    <meta property="og:title" content="Intelliquinte">
+    <meta property="og:description" content="The Home Page of Intelliquinte. A teenager who is passionate about technology and innovation.">
+    <meta property="og:image" content="/Logo/intelliquinte.PNG">
+    <meta property="og:url" content="https://intelliquinte.com/Home/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelliquinte - Home">
+    <meta name="twitter:description" content="The Home Page of Intelliquinte. A teenager who is passionate about technology and innovation.">
+    <meta name="twitter:image" content="https://intelliquinte.com/Logo/intelliquinte.PNG">
+    <meta name="google" content="notranslate">
     <title>Intelliquinte - Home</title>
     <link rel="stylesheet" href="/Styles/nagivation.css">
     <link rel="stylesheet" href="/Styles/logo.css">
     <link rel="stylesheet" href="/Styles/footer.css">
-    <link rel="stylesheet" href="/Styles/hero.css">
+    <link rel="stylesheet" href="/Templates/Hero/hero.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/Styles/main.css">
-    <link rel="stylesheet" href="/Styles/Subscribe.css">
-    <link rel="stylesheet" href="/Styles/carousel.css">
-    <link rel="stylesheet" href="/Styles/creator.css">
+    <link rel="stylesheet" href="/Templates/Subscribe/Subscribe.css">
+    <link rel="stylesheet" href="/Templates/Carousel/carousel.css">
+    <link rel="stylesheet" href="/Templates/The Creator/creator.css">
+    <link rel="icon" href="/Logo/logoofintelliquinte.PNG" type="image/x-icon">
+    <meta name="theme-color" content="#333333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Add this for CSRF protection -->
+    <meta name="csrf-token" content="">
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data: *;
+        img-src 'self' data: https:;
+        connect-src 'self' https://script.google.com https://ipapi.co data:;
+    ">
 </head>
 <body>
     <header class="main-header">
@@ -31,7 +60,6 @@
             </div>
         </nav>
     </header>
-
     <section class="hero">
         <div class="hero-container">
             <header class="hero-content">
@@ -137,118 +165,7 @@
         </div>
     </footer>
 
-    <script>
-        const infoButton = document.getElementById("infoButton");
-        const infoModal = document.getElementById("infoModal");
-        const closeButton = document.getElementsByClassName("close")[0];
-
-        infoButton.onclick = function() {
-            infoModal.style.display = "block";
-        }
-
-        closeButton.onclick = function() {
-            infoModal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == infoModal) {
-                infoModal.style.display = "none";
-            }
-        }
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const subscribeButton = document.getElementById('subscribeButton');
-            const subscribeForm = document.getElementById('subscribeForm');
-
-            subscribeButton.addEventListener('click', function() {
-                subscribeButton.style.display = 'none';
-                subscribeForm.style.display = 'block';
-            });
-
-            subscribeForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                alert(`Thank you for subscribing with: ${email}`);
-                this.reset();
-                subscribeForm.style.display = 'none';
-                subscribeButton.style.display = 'inline-block';
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel');
-            const items = carousel.querySelectorAll('.carousel-item');
-            const prevButton = carousel.querySelector('.carousel-control-prev');
-            const nextButton = carousel.querySelector('.carousel-control-next');
-            const indicators = carousel.querySelectorAll('.carousel-indicators .indicator');
-            let currentIndex = 0;
-            let isAnimating = false;
-            let intervalId;
-
-            function showSlide(index, direction) {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                const currentSlide = items[currentIndex];
-                const nextSlide = items[index];
-
-                currentSlide.classList.remove('active');
-                nextSlide.classList.add('active', 'next');
-
-                // Trigger reflow
-                void nextSlide.offsetWidth;
-
-                nextSlide.style.opacity = '1';
-                currentSlide.style.opacity = '0';
-
-                setTimeout(() => {
-                    currentSlide.classList.remove('active');
-                    nextSlide.classList.remove('next');
-                    currentIndex = index;
-                    isAnimating = false;
-                }, 500); // This should match the transition duration in CSS
-
-                indicators.forEach((indicator, i) => {
-                    indicator.classList.toggle('active', i === index);
-                });
-            }
-
-            function nextSlide() {
-                const nextIndex = (currentIndex + 1) % items.length;
-                showSlide(nextIndex, 'next');
-                resetTimer();
-            }
-
-            function prevSlide() {
-                const prevIndex = (currentIndex - 1 + items.length) % items.length;
-                showSlide(prevIndex, 'prev');
-                resetTimer();
-            }
-
-            function resetTimer() {
-                clearInterval(intervalId);
-                intervalId = setInterval(nextSlide, 5000);
-            }
-
-            prevButton.addEventListener('click', prevSlide);
-            nextButton.addEventListener('click', nextSlide);
-
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    if (index !== currentIndex) {
-                        showSlide(index, index > currentIndex ? 'next' : 'prev');
-                        resetTimer();
-                    }
-                });
-            });
-
-            // Initial timer start
-            resetTimer();
-        });
-    </script>
+    <!-- Load your JavaScript file -->
+    <script src="/Scripts/scripts.js"></script>
 </body>
 </html>
