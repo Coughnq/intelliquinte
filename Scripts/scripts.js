@@ -1,6 +1,6 @@
 console.log('Scripts file loaded');
 
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6SCOYFAkQJwJ1Gl6009kKrD2Z5RmAUpUV3r97HeUcaI5O5-2qgdg-pnfjUFJZbzex/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQHiu-stUoxVEaZVaB77vxEzu9krwV6jq5CIGqeXT0gEeulfUyEJm57sWEah7owAVo/exec';
 
 let sessionData = {
     id: null,
@@ -117,11 +117,96 @@ function initializeSubscribe() {
     }
 }
 
-// Initialize everything when the DOM is ready
+// Add this function to initialize the carousel
+function initializeCarousel() {
+    console.log('Initializing carousel');
+    if (typeof $ === 'undefined') {
+        console.error('jQuery is not loaded');
+        return;
+    }
+    if (typeof $.fn.slick === 'undefined') {
+        console.error('Slick carousel library is not loaded');
+        return;
+    }
+    const $carousel = $('.carousel');
+    if ($carousel.length === 0) {
+        console.error('Carousel element not found');
+        return;
+    }
+    $carousel.slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '.carousel-prev',
+        nextArrow: '.carousel-next'
+    });
+    console.log('Carousel initialized successfully');
+}
+
+// Add this function to handle carousel navigation buttons
+function initializeCarouselButtons() {
+    console.log('Initializing carousel buttons');
+    const $prevButton = $('.carousel-prev');
+    const $nextButton = $('.carousel-next');
+    const $carousel = $('.carousel');
+
+    if ($prevButton.length === 0 || $nextButton.length === 0) {
+        console.error('Carousel buttons not found');
+        return;
+    }
+
+    if (!$carousel.hasClass('slick-initialized')) {
+        console.error('Carousel is not initialized');
+        return;
+    }
+
+    $prevButton.on('click', function() {
+        $carousel.slick('slickPrev');
+    });
+    $nextButton.on('click', function() {
+        $carousel.slick('slickNext');
+    });
+    console.log('Carousel buttons initialized successfully');
+}
+
+// Add the info button functionality
+function initializeInfoButton() {
+    console.log('Initializing info button');
+    const infoButton = document.getElementById('infoButton');
+    const infoModal = document.getElementById('infoModal');
+    const closeButton = infoModal.querySelector('.close');
+    
+    if (!infoButton || !infoModal) {
+        console.error('Info button or modal not found');
+        return;
+    }
+    
+    infoButton.addEventListener('click', function() {
+        infoModal.style.display = 'block';
+    });
+    
+    closeButton.addEventListener('click', function() {
+        infoModal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == infoModal) {
+            infoModal.style.display = 'none';
+        }
+    });
+    
+    console.log('Info button initialized successfully');
+}
+
+// Modify the DOMContentLoaded event listener to include these new functions
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     initializeSessionData();
     initializeSubscribe();
+    initializeInfoButton();
+    initializeCarousel();
 
     // Send analytics data when the user leaves the page
     window.addEventListener('beforeunload', function() {
@@ -130,3 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('All functions defined in scripts.js');
+
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error('Global error:', message, 'at', source, 'line', lineno, 'column', colno, 'Error object:', error);
+};

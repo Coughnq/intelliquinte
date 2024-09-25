@@ -21,13 +21,13 @@
     <link rel="stylesheet" href="/Styles/nagivation.css">
     <link rel="stylesheet" href="/Styles/logo.css">
     <link rel="stylesheet" href="/Styles/footer.css">
-    <link rel="stylesheet" href="/Styles/hero.css">
+    <link rel="stylesheet" href="/Templates/Hero/hero.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/Styles/main.css">
-    <link rel="stylesheet" href="/Styles/Subscribe.css">
-    <link rel="stylesheet" href="/Styles/carousel.css">
-    <link rel="stylesheet" href="/Styles/creator.css">
+    <link rel="stylesheet" href="/Templates/Subscribe/Subscribe.css">
+    <link rel="stylesheet" href="/Templates/Carousel/carousel.css">
+    <link rel="stylesheet" href="/Templates/The Creator/creator.css">
     <link rel="icon" href="/Logo/logoofintelliquinte.PNG" type="image/x-icon">
     <meta name="theme-color" content="#333333">
     <meta name="mobile-web-app-capable" content="yes">
@@ -35,14 +35,12 @@
     <!-- Add this for CSRF protection -->
     <meta name="csrf-token" content="">
 
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data: *;
-        img-src 'self' data: https:;
-        connect-src 'self' https://script.google.com https://ipapi.co data:;
-    ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https: http:; script-src 'self' 'unsafe-inline' https: http:; font-src 'self' https: http: data:; connect-src 'self' https: http: data:; img-src 'self' https: http: data:;">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/Scripts/scripts.js"></script>
 </head>
 <body>
     <header class="main-header">
@@ -95,31 +93,13 @@
     </section>
 
     <section class="carousel-section">
-<!--        <h2 class="carousel-title">Our Projects</h2> -->
         <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/Test.folder/elke-karin-lugert-GraajutbJHE-unsplash.jpg" alt="Project 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="/Test.folder/samsommer-vddccTqwal8-unsplash.jpg" alt="Project 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="/Test.folder/v2osk-1Z2niiBPg5A-unsplash.jpg" alt="Project 3">
-                </div>
-            </div>
-            <button class="carousel-control carousel-control-prev" aria-label="Previous slide">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="carousel-control carousel-control-next" aria-label="Next slide">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-            <div class="carousel-indicators">
-                <button class="indicator active" aria-label="Go to slide 1"></button>
-                <button class="indicator" aria-label="Go to slide 2"></button>
-                <button class="indicator" aria-label="Go to slide 3"></button>
-            </div>
+            <div class="carousel-item"><img src="/Test.folder/elke-karin-lugert-GraajutbJHE-unsplash.jpg" alt="Description of image 1"></div>
+            <div class="carousel-item"><img src="/Test.folder/samsommer-vddccTqwal8-unsplash.jpg" alt="Description of image 2"></div>
+            <div class="carousel-item"><img src="/Test.folder/elke-karin-lugert-GraajutbJHE-unsplash.jpg" alt="Description of image 3"></div>
         </div>
+        <button class="carousel-prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-next" aria-label="Next slide">&#10095;</button>
     </section>
 
     <section class="creator-section">
@@ -164,8 +144,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Load your JavaScript file -->
-    <script src="/Scripts/scripts.js"></script>
 </body>
 </html>
